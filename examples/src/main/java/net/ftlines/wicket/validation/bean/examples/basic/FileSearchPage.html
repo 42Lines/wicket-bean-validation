@@ -1,0 +1,24 @@
+<html xmlns:wicket>
+<wicket:extend>
+
+<h3>File Search</h3>
+<div wicket:id="feedback"></div>
+<form wicket:id="form">
+	<p>
+	<label wicket:for="filename"><span class="label-text">Name</span>:</label>
+	<input wicket:id="filename" type="text"/>
+	</p>
+	<p>
+	<label wicket:for="minSize"><span class="label-text">Minimum File Size</span>:</label>
+	<input wicket:id="minSize" type="text" size="3"/> (mb)
+	</p>
+	<p>
+	<label wicket:for="maxSize"><span class="label-text">Maximum File Size</span>:</label>
+	<input wicket:id="maxSize" type="text" size="3"/> (mb)
+	</p>
+	<p>
+	<input type="submit" value="Search"/>
+	</p>
+</form>
+</wicket:extend>
+</html>
