@@ -30,10 +30,12 @@
 	<junit.version>4.8.1</junit.version>
 	<validation.version>1.0.0.GA</validation.version>
 	<validator.version>4.2.0.Final</validator.version>
+	<metagen.version>1.0-SNAPSHOT</metagen.version>
   </properties>
   <modules>
     <module>core</module>
     <module>examples</module>
+    <module>metagen</module>
   </modules>
 
 	<dependencyManagement>
@@ -55,6 +57,12 @@
 				<groupId>org.hibernate</groupId>
 				<artifactId>hibernate-validator</artifactId>
 				<version>${validator.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>net.ftlines.metagen</groupId>
+				<artifactId>metagen-core</artifactId>
+				<version>${metagen.version}</version>
 			</dependency>
 			
 			<dependency>
