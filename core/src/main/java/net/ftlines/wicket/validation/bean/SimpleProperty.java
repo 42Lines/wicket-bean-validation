@@ -29,10 +29,9 @@ public class SimpleProperty implements IProperty
 	 * Constructs a simple property
 	 * 
 	 * @param name
-	 * @param type
 	 * @param containerType
 	 */
-	public SimpleProperty(String name, Class<?> type, Class<?> containerType)
+	public SimpleProperty(String name, Class<?> containerType)
 	{
 		this.name = name;
 		this.containerType = ClassReference.of(containerType);
