@@ -185,6 +185,21 @@
       </plugin>
 	</plugins>
   </pluginManagement>
-  
   </build>
+  
+    
+  <repositories>
+	<repository>
+		<id>repository.apache.org.public</id>
+		<url>https://repository.apache.org/content/groups/public</url>
+		<snapshots>
+			<enabled>true</enabled>
+		</snapshots>
+		<releases>
+			<enabled>true</enabled>
+		</releases>
+	</repository>
+  </repositories>
+  
+
 </project>
