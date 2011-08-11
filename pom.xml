@@ -8,7 +8,7 @@
 	</parent>
   <groupId>net.ftlines.wicket-bean-validation</groupId>
   <artifactId>parent</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <packaging>pom</packaging>
   <name>Wicket Bean Validation</name>
   <description>Provides integration between Wicket and JSR-303 validation</description>
@@ -67,13 +67,13 @@
 			<dependency>
 				<groupId>net.ftlines.metagen</groupId>
 				<artifactId>metagen-core</artifactId>
-				<version>${metagen.version}</version>
+				<version>1.1</version>
 			</dependency>
 			
 			<dependency>
 			  <groupId>org.apache.wicket</groupId>
 			  <artifactId>wicket</artifactId>
-			  <version>${wicket.version}</version>
+			  <version>1.4.18</version>
 			</dependency>
 			<dependency>
 			  <groupId>org.slf4j</groupId>
