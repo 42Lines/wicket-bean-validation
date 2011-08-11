@@ -1,15 +1,13 @@
 /**
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
  */
 
 package net.ftlines.wicket.validation.bean;
@@ -42,9 +40,9 @@ import org.apache.wicket.validation.IValidator;
 public class ValidationForm<T> extends Form<T>
 {
 	private static final short FLAG_VALIDATE_MODEL_OBJECT = 0x01;
-	private static final short FLAG_AUTOADD_VALIDATORS = 0x01;
+	private static final short FLAG_AUTOADD_VALIDATORS = 0x02;
 
-	private short flags = FLAG_VALIDATE_MODEL_OBJECT;
+	private short flags = FLAG_VALIDATE_MODEL_OBJECT | FLAG_AUTOADD_VALIDATORS;
 	private IGroups groups;
 
 	/**
@@ -152,6 +150,11 @@ public class ValidationForm<T> extends Form<T>
 			return;
 		}
 
+		addPropertyValidators();
+	}
+
+	protected void addPropertyValidators()
+	{
 		final ValidationContext validation = ValidationContext.get();
 
 		visitChildren(FormComponent.class, new IVisitor<FormComponent<?>>()
@@ -189,7 +192,14 @@ public class ValidationForm<T> extends Form<T>
 	protected void onValidateModelObjects()
 	{
 		super.onValidateModelObjects();
+		if (getFormFlag(FLAG_VALIDATE_MODEL_OBJECT) && getModel() != null)
+		{
+			validateFormModelObject();
+		}
+	}
 
+	protected void validateFormModelObject()
+	{
 		final Object bean = getModelObject();
 
 		// validate the bean
