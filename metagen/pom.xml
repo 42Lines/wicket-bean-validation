@@ -9,7 +9,15 @@
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 	<artifactId>metagen</artifactId>
-	<name>metagen</name>
+		<name>Wicket Bean Validation MetaGen Integration</name>
+	<description>Allows use of MetaGen properties with Wicket Bean Validation validators</description>
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>

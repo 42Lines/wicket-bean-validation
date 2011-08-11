@@ -10,8 +10,15 @@
 	</parent>
 	<artifactId>examples</artifactId>
 	<packaging>war</packaging>
-	<name>examples</name>
-	<description></description>
+	<name>Wicket Bean Validation Examples</name>
+	<description>Wicket Bean Validation usages and examples</description>
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
 	<dependencies>
 		<dependency>
 			<groupId>net.ftlines.wicket-bean-validation</groupId>
