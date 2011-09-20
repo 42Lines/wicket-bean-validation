@@ -18,7 +18,6 @@ import java.util.Set;
 import javax.validation.ConstraintViolation;
 
 import org.apache.wicket.model.IModel;
-import org.apache.wicket.validation.IModelAwareValidatable;
 import org.apache.wicket.validation.INullAcceptingValidator;
 import org.apache.wicket.validation.IValidatable;
 
@@ -72,10 +71,8 @@ public class PropertyValidator<T> implements INullAcceptingValidator<T>
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
-	public void validate(IValidatable<T> validatable_)
+	public void validate(IValidatable<T> validatable)
 	{
-		IModelAwareValidatable<T> validatable = (IModelAwareValidatable<T>)validatable_;
-
 		ValidationContext context = ValidationContext.get();
 
 		IProperty property = null;

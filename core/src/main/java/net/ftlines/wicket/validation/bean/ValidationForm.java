@@ -22,6 +22,8 @@ import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.FormComponent;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.util.string.interpolator.MapVariableInterpolator;
+import org.apache.wicket.util.visit.IVisit;
+import org.apache.wicket.util.visit.IVisitor;
 import org.apache.wicket.validation.IErrorMessageSource;
 import org.apache.wicket.validation.IValidator;
 
@@ -157,11 +159,11 @@ public class ValidationForm<T> extends Form<T>
 	{
 		final ValidationContext validation = ValidationContext.get();
 
-		visitChildren(FormComponent.class, new IVisitor<FormComponent<?>>()
+		visitChildren(FormComponent.class, new IVisitor<FormComponent<?>, Void>()
 		{
-			@SuppressWarnings({ "unchecked", "rawtypes" })
+			@SuppressWarnings({ "rawtypes", "unchecked" })
 			@Override
-			public Object component(FormComponent<?> component)
+			public void component(FormComponent<?> component, IVisit<Void> visit)
 			{
 				if (!hasPropertyValidator(component))
 				{
@@ -171,7 +173,6 @@ public class ValidationForm<T> extends Form<T>
 						component.add(new PropertyValidator(null, groups));
 					}
 				}
-				return CONTINUE_TRAVERSAL;
 			}
 		});
 	}
