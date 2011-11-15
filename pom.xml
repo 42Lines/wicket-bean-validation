@@ -8,7 +8,7 @@
 	</parent>
   <groupId>net.ftlines.wicket-bean-validation</groupId>
   <artifactId>parent</artifactId>
-  <version>1.1</version>
+  <version>1.2-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Wicket Bean Validation</name>
   <description>Provides integration between Wicket and JSR-303 validation</description>
