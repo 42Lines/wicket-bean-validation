@@ -226,19 +226,13 @@ public class ValidationForm<T> extends Form<T>
 		}
 
 		@Override
-		public String getMessage(String key)
+		public String getMessage(String key, Map<String, Object> vars)
 		{
-			return form.getString(key);
-		}
-
-		@Override
-		public String substitute(String string, Map<String, Object> vars) throws IllegalStateException
-		{
-			return new MapVariableInterpolator(string, vars, Application.get()
+			String s = form.getString(key);
+			return new MapVariableInterpolator(s, vars, Application.get()
 				.getResourceSettings()
 				.getThrowExceptionOnMissingResource()).toString();
 		}
-
 	}
 
 }
