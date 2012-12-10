@@ -224,7 +224,7 @@ public class ValidationForm<T> extends Form<T>
 		{
 			this.form = form;
 		}
-
+/*
 		@Override
 		public String getMessage(String key)
 		{
@@ -238,7 +238,16 @@ public class ValidationForm<T> extends Form<T>
 				.getResourceSettings()
 				.getThrowExceptionOnMissingResource()).toString();
 		}
+*/
 
+		@Override
+		public String getMessage(String key, Map<String, Object> vars)
+		{
+			String s = form.getString(key);
+			return new MapVariableInterpolator(s, vars, Application.get()
+				.getResourceSettings()
+				.getThrowExceptionOnMissingResource()).toString();
+		}
 	}
 
 }
